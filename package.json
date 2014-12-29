@@ -1,31 +1,31 @@
 {
-    "name": "api-seed",
-    "version": "0.0.0",
-    "private": true,
-    "scripts": {
-        "start": "node ./bin/www"
-    },
-    "dependencies": {
-        "body-parser": "*",
-        "connect-flash": "*",
-        "cookie-parser": "*",
-        "debug": "*",
-        "express": "*",
-        "express-session": "*",
-        "grunt": "*",
-        "grunt-autoprefixer": "*",
-        "grunt-browser-sync": "*",
-        "grunt-closure-compiler": "*",
-        "grunt-contrib-concat": "*",
-        "grunt-contrib-less": "*",
-        "grunt-contrib-watch": "*",
-        "grunt-remove-logging": "*",
-        "jade": "*",
-        "mongoose": "*",
-        "morgan": "*",
-        "nodemon": "*",
-        "passport": "*",
-        "passport-local": "*",
-        "serve-favicon": "*"
-    }
+  "name": "api-seed",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "body-parser": "*",
+    "connect-flash": "*",
+    "cookie-parser": "*",
+    "debug": "*",
+    "express": "*",
+    "express-session": "*",
+    "grunt": "*",
+    "grunt-autoprefixer": "*",
+    "grunt-browser-sync": "*",
+    "grunt-closure-compiler": "*",
+    "grunt-contrib-concat": "*",
+    "grunt-contrib-less": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-remove-logging": "*",
+    "jade": "*",
+    "mongoose": "*",
+    "morgan": "*",
+    "nodemon": "*",
+    "passport": "^0.2.1",
+    "passport-local": "*",
+    "serve-favicon": "*"
+  }
 }

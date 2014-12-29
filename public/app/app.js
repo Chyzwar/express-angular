@@ -6,10 +6,9 @@
 angular.module('ProjectSeed', ['ngRoute'])
     .config(function($routeProvider, $locationProvider) {
         $routeProvider
-            .when('/contacts', {
-                controller: 'ListController',
-                templateUrl: 'views/list.html'
+            .when('/', {
+                controller: 'HomeController',
+                templateUrl: 'app/home/home.html'
             });
         $locationProvider.html5Mode(true);
     });
-

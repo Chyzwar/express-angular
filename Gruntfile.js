@@ -4,10 +4,17 @@ module.exports = function(grunt) {
             styles: {
                 // Which files to watch (all .less files recursively in the less directory)
                 files: ['public/**/*.less'],
-                tasks: ['less'],
+                tasks: ['concat:less', 'less'],
                 options: {
                     nospawn: true
                 },
+            },
+            scripts: {
+                files: ['public/app/**/*.js'],
+                tasks: ['concat:js'],
+                options: {
+                    interrupt: true
+                }
             }
         },
         less: {
@@ -18,7 +25,7 @@ module.exports = function(grunt) {
                 },
                 files: {
                     // target.css file: source.less file
-                    "public/assets/css/main.min.css": "public/assets/css/main.less"
+                    "public/dist/main.min.css": "public/dist/main.min.less"
                 }
             }
         },
@@ -49,18 +56,33 @@ module.exports = function(grunt) {
             }
         },
         concat: {
-            options: {
-                separator: "\n", //add a new line after each file
-                banner: "//Concatenated Javascript", //added before everything
-                footer: "" //added after everything
-            },
-            dist: {
-                // the files to concatenate
+            js: {
+                options: {
+                    separator: "\n", //add a new line after each file
+                    banner: "//Concatenated Angular App \n", //added before everything
+                    footer: "//End of Angular App", //added after everything
+                    sourceMap: true
+                },
                 src: [
-
+                    'public/lib/angular/angular.min.js',
+                    'public/lib/angular-route/angular-route.min.js',
+                    'public/lib/angular-resource/angular-resource.min.js',
+                    'public/lib/angular-messages/angular-messages.min.js',
+                    'public/app/app.js',
+                    // Main Application source files
+                    'public/app/**/*.js',
                 ],
                 // the location of the resulting JS file
-                dest: '../public/javascripts/interaction.min.js'
+                dest: 'public/dist/app.min.js'
+            },
+            less: {
+                src: [
+                    'public/assets/css/main.less',
+                    // Main Application less source files
+                    'public/app/**/*.less',
+                ],
+                // the location of the resulting JS file
+                dest: 'public/dist/main.min.less'
             }
         },
         removelogging: {
