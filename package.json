@@ -27,5 +27,8 @@
     "passport": "^0.2.1",
     "passport-local": "*",
     "serve-favicon": "*"
+  },
+  "devDependencies": {
+    "karma": "^0.12.28"
   }
 }
