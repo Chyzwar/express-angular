@@ -12,23 +12,16 @@
     "debug": "*",
     "express": "*",
     "express-session": "*",
-    "grunt": "*",
-    "grunt-autoprefixer": "*",
-    "grunt-browser-sync": "*",
-    "grunt-closure-compiler": "*",
-    "grunt-contrib-concat": "*",
-    "grunt-contrib-less": "*",
-    "grunt-contrib-watch": "*",
-    "grunt-remove-logging": "*",
     "jade": "*",
     "mongoose": "*",
     "morgan": "*",
-    "nodemon": "*",
     "passport": "^0.2.1",
     "passport-local": "*",
     "serve-favicon": "*"
   },
   "devDependencies": {
-    "karma": "^0.12.28"
-  }
+    "karma": "^0.12.28",
+    "nodemon": "^1.3.7"
+  },
+  "optionalDependencies": {}
 }

@@ -1,22 +1,22 @@
 var LocalStrategy = require('passport-local').Strategy;
 var User = require('../../models/User');
 
-module.exports = function(passport) {
+module.exports = function (passport) {
 
     passport.use('login', new LocalStrategy({
             usernameField: 'email',
             passwordField: 'password',
             passReqToCallback: true
         },
-        function(req, email, password, done) {
+        function (req, email, password, done) {
             // check in mongo if a user with username exists or not
             User.findOne({
                     'email': email
                 },
-                function(err, user) {
+                function (err, user) {
                     // In case of any error, return using the done method
                     if (err) return done(err);
-                    
+
                     // Username does not exist, log the error and redirect back
                     if (!user) {
                         return done(null, false, req.flash('message', 'User Not found.'));
